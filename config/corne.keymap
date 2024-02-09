@@ -77,7 +77,7 @@
         raise_layer {
             bindings = <
                 &kp TAB &kp EXCL &kp N7 &kp N8 &kp N9 &kp PRCNT   &kp CARET &uc_o &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-                &kp LCTL &kp LGUI &lh_pht LALT N4 &lh_pht LCTL N5 &lh_pht LSFT N6 &trans   &kp LEFT &rh_pht RSFT DOWN &rh_pth RCTL UP &rh_pth RALT RIGHT &kp BSLH &kp GRAVE
+                &kp LCTL &kp LGUI &lh_pht LALT N4 &lh_pht LCTL N5 &lh_pht LSFT N6 &trans   &kp LEFT &rh_pht RSFT DOWN &rh_pht RCTL UP &rh_pht RALT RIGHT &kp BSLH &kp GRAVE
                 &kp LSHFT &trans &kp N1 &kp N2 &kp N3 &trans   &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &kp TILDE
                 &kp LGUI &kp N0 &caps_word &kp RET &trans &kp RALT
             >;
