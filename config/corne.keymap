@@ -19,7 +19,7 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <5 6 7 8 9 10>;    // <---[[right-hand keys]]
         };
-        rh_pht: right_positional_hold_tap {
+        rh_pht: left_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-unless-interrupted";
@@ -77,8 +77,8 @@
         raise_layer {
             bindings = <
                 &kp TAB &kp EXCL &kp N7 &kp N8 &kp N9 &kp PRCNT   &kp CARET &uc_o &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-                &kp LCTL &kc LGUI &lh_pht LALT N4 &lh_pht LCTL N5 &lh_pht LSFT N6 &trans   &kp LEFT &rh_pht RSFT DOWN &rh_pth RCTL UP &rh_pth RALT RIGHT &kp BSLH &kp GRAVE
-                &kp LSHFT &trans &kc N1 &kp N2 &kp N3 &trans   &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &kp TILDE
+                &kp LCTL &kp LGUI &lh_pht LALT N4 &lh_pht LCTL N5 &lh_pht LSFT N6 &trans   &kp LEFT &rh_pht RSFT DOWN &rh_pth RCTL UP &rh_pth RALT RIGHT &kp BSLH &kp GRAVE
+                &kp LSHFT &trans &kp N1 &kp N2 &kp N3 &trans   &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &kp TILDE
                 &kp LGUI &kp N0 &caps_word &kp RET &trans &kp RALT
             >;
         };
