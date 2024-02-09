@@ -7,27 +7,11 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include "../zmk-nodefree-config/helper.h"
+#include "includes/behaviours_homerow_mods.dtsi"
 
 / {
    behaviors {
-        lh_pht: left_positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <5 6 7 8 9 10>;    // <---[[right-hand keys]]
-        };
-        rh_pht: right_positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <0 1 2 3 4 5>;    // <---[[right-hand keys]]
-        };
           mo_tog: behavior_mo_tog {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -59,7 +43,7 @@
         default_layer {
             bindings = <
                 &kp TAB  &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U &kp Y &kp SEMI &kp BSPC
-                &kp LCTL &lh_pht LGUI A &lh_pht LALT R &lh_pht LCTL S &lh_pht LSFT T &kp G   &kp M &rh_pht RSFT N &rh_pht RCTL E &rh_pht RALT I &rh_pht RGUI O &kp DQT
+                &kp LCTL &hm_l LGUI A &hm_l LALT R &hm_l LCTL S &hm_shift_l LSFT T &kp G   &kp M &hm_shift_r RSFT N &hm_r RCTL E &hm_r RALT I &hm_r RGUI O &kp DQT
                 &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp RSFT
                 &mo_tog 1 TAB &mo_tog 2 SPACE &kp ESC &kp BSPC &mo_tog 2 RET &mo_tog 1 DEL
             >;
@@ -77,7 +61,7 @@
         raise_layer {
             bindings = <
                 &kp TAB &kp EXCL &kp N7 &kp N8 &kp N9 &kp PRCNT   &kp CARET &uc_o &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-                &kp LCTL &kp LGUI &lh_pht LALT N4 &lh_pht LCTL N5 &lh_pht LSFT N6 &trans   &kp LEFT &rh_pht RSFT DOWN &rh_pht RCTL UP &rh_pht RALT RIGHT &kp BSLH &kp GRAVE
+                &kp LCTL &kp LGUI &hm_l LALT N4 &hm_l LCTL N5 &hm_shift_l LSFT N6 &trans   &kp LEFT &hm_shift_r RSFT DOWN &hm_r RCTL UP &hm_r RALT RIGHT &kp BSLH &kp GRAVE
                 &kp LSHFT &trans &kp N1 &kp N2 &kp N3 &trans   &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &kp TILDE
                 &kp LGUI &kp N0 &caps_word &kp RET &trans &kp RALT
             >;
