@@ -18,7 +18,7 @@
             label = "MO_TOG";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&mo>, <&kp>;
         };
     };
