@@ -44,27 +44,27 @@
 
         default_layer {
             bindings = <
-                &kp TAB  &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U &kp Y &kp SEMI &kp BSPC
-                &kp LCTL &hm_l LGUI A &hm_l LALT R &hm_l LCTL S &hm_shift_l LSFT T &kp G   &kp M &hm_shift_r RSFT N &hm_r RCTL E &hm_r RALT I &hm_r RGUI O &kp DQT
-                &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp RSFT
+                &trans &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U &kp Y &kp SEMI &trans
+                &trans &hm_l LGUI A &hm_l LALT R &hm_l LCTL S &hm_shift_l LSFT T &kp G   &kp M &hm_shift_r RSFT N &hm_r RCTL E &hm_r RALT I &hm_r RGUI O &trans
+                &trans &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp COMMA &kp DOT &kp FSLH &trans
                 &mo_tog 1 TAB &mo_tog 2 SPACE &kp ESC &kp BSPC &mo_tog 2 RET &mo_tog 1 DEL
             >;
         };
 
         lower_layer {
             bindings = <
-                &kp TAB &kp EXCL &kp PRCNT &kp ASTERISK &kp HASH &kp N5   &kp CARET &kp LPAR &kp RPAR &kp TILDE2 &kp DQT &kp BSPC
-                &bt BT_CLR &kp DOLLAR &kp EXCLAMATION &kp PLUS &kp EQUAL &kp PIPE   &kp AMPERSAND &kp LBRC &kp SQT &kp GRAVE &trans &trans
-                &kp LSHFT &kp AT_SIGN &kp MINUS &kp UNDER &trans &trans   &trans &kp LBKT &kp RBKT &kp CARET &kp BSLH &trans
+                &trans &kp EXCL &kp PRCNT &kp ASTERISK &kp HASH &kp N5   &kp CARET &kp LPAR &kp RPAR &kp TILDE &kp DQT &trans
+                &trans &kp DOLLAR &kp EXCLAMATION &kp PLUS &kp EQUAL &kp PIPE   &kp AMPERSAND &kp LBRC &kp RBRC &kp SQT &kp GRAVE &trans
+                &trans &trans &kp AT_SIGN &kp MINUS &kp UNDER &trans   &trans &kp LBKT &kp RBKT &kp CARET &kp BSLH &trans
                 &kp LGUI &trans &kp SPACE &kp RET &trans &kp RALT
             >;
         };
 
         raise_layer {
             bindings = <
-                &kp TAB &kp EXCL &kp N7 &kp N8 &kp N9 &kp PRCNT   &kp CARET &uc_o &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-                &kp LCTL &kp LGUI &hm_l LALT N4 &hm_l LCTL N5 &hm_shift_l LSFT N6 &trans   &kp LEFT &hm_shift_r RSFT DOWN &hm_r RCTL UP &hm_r RALT RIGHT &hm_r RGUI BSLH &kp GRAVE
-                &kp LSHFT &trans &kp N1 &kp N2 &kp N3 &trans   &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &kp TILDE
+                &trans &kp EXCL &kp N7 &kp N8 &kp N9 &kp PRCNT   &kp CARET &uc_o &kp KP_MULTIPLY &kp LPAR &kp RPAR &trans
+                &trans &kp LGUI &hm_l LALT N4 &hm_l LCTL N5 &hm_shift_l LSFT N6 &trans   &kp LEFT &hm_shift_r RSFT DOWN &hm_r RCTL UP &hm_r RALT RIGHT &hm_r RGUI BSLH &trans
+                &trans &trans &kp N1 &kp N2 &kp N3 &trans   &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &trans
                 &kp LGUI &kp N0 &caps_word &kp RET &trans &kp RALT
             >;
         };
