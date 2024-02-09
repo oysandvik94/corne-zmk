@@ -9,48 +9,79 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
-
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
-                };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
-
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
+   behaviors {
+        lh_pht: left_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <150>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <0>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <5 6 7 8 9 10>;    // <---[[right-hand keys]]
         };
+        rh_pht: left_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <150>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <0>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 3 4 5>;    // <---[[right-hand keys]]
+        };
+          mo_tog: behavior_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&tog>;
+        };
+    };
+
+    macros {
+            uc_o: uc_o {
+                label = "UNICODE_O";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                tap-ms = <0>;
+                wait-ms = <0>;
+                bindings
+                    = <&macro_press &kp LCTRL &kp LSHFT>
+                    , <&macro_tap &kp U>
+                    , <&macro_release &kp LCTRL &kp LSHFT>
+                    , <&macro_tap &kp N0 &kp N0 &kp F &kp N8 &kp SPC>
+                    ;
+            }; 
+        };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &kp TAB  &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U &kp Y &kp SEMI &kp BSPC
+                &kp LCTL &lh_pht LGUI A &lh_pht LALT R &lh_pht LCTL S &lh_pht LSFT T &kp G   &kp M &rh_pht RSFT N &rh_pht RCTL E &rh_pht RALT I &rh_pht RGUI O &kp DQT
+                &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp COMMA &kp DOT &kp FSLH &kp RSFT
+                &mo_tog 1 TAB &mo_tog 2 SPACE &kp ESC &kp BSPC &mo_tog 2 RET &mo_tog 1 DEL
+            >;
+        };
+
+        lower_layer {
+            bindings = <
+                &kp TAB &kp EXCL &kp PRCNT &kp ASTERISK &kp HASH &kp N5   &kp CARET &kp LPAR &kp RPAR &kp TILDE2 &kp DQT &kp BSPC
+                &bt BT_CLR &kp DOLLAR &kp EXCLAMATION &kp PLUS &kp EQUAL &kp PIPE   &kp AMPERSAND &kp LBRC &kp SQT &kp GRAVE &trans &trans
+                &kp LSHFT &kp AT_SIGN &kp MINUS &kp UNDER &trans &trans   &trans &kp LBKT &kp RBKT &kp CARET &kp BSLH &trans
+                &kp LGUI &trans &kp SPACE &kp RET &trans &kp RALT
+            >;
+        };
+
+        raise_layer {
+            bindings = <
+                &kp TAB &kp EXCL &kp N7 &kp N8 &kp N9 &kp PRCNT   &kp CARET &uc_o &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
+                &kp LCTL &kc LGUI &lh_pht LALT N4 &lh_pht LCTL N5 &lh_pht LSFT N6 &trans   &kp LEFT &rh_pht RSFT DOWN &rh_pth RCTL UP &rh_pth RALT RIGHT &kp BSLH &kp GRAVE
+                &kp LSHFT &trans &kc N1 &kp N2 &kp N3 &trans   &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &kp TILDE
+                &kp LGUI &kp N0 &caps_word &kp RET &trans &kp RALT
+            >;
+        };
+    };
 };
+
