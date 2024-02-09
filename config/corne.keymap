@@ -47,7 +47,7 @@
                 &trans &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U &kp Y &kp SEMI &trans
                 &trans &hm_l LGUI A &hm_l LALT R &hm_l LCTL S &hm_shift_l LSFT T &kp G   &kp M &hm_shift_r RSFT N &hm_r RCTL E &hm_r RALT I &hm_r RGUI O &trans
                 &trans &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp COMMA &kp DOT &kp FSLH &trans
-                &mo_tog 1 TAB &mo_tog 2 SPACE &kp ESC &kp BSPC &mo_tog 2 RET &mo_tog 1 DEL
+                &lt 1 TAB &lt 2 SPACE &kp ESC &kp BSPC &lt 2 RET &lt 1 DEL
             >;
         };
 
