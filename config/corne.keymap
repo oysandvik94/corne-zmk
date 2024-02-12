@@ -24,6 +24,32 @@
     };
 
     macros {
+            uc_ae: uc_ae {
+                label = "UNICODE_AE";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                tap-ms = <0>;
+                wait-ms = <0>;
+                bindings
+                    = <&macro_press &kp LCTRL &kp LSHFT>
+                    , <&macro_tap &kp U>
+                    , <&macro_release &kp LCTRL &kp LSHFT>
+                    , <&macro_tap &kp N0 &kp N0 &kp E &kp N6 &kp SPC>
+                    ;
+            }; 
+            uc_a: uc_a {
+                label = "UNICODE_A";
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                tap-ms = <0>;
+                wait-ms = <0>;
+                bindings
+                    = <&macro_press &kp LCTRL &kp LSHFT>
+                    , <&macro_tap &kp U>
+                    , <&macro_release &kp LCTRL &kp LSHFT>
+                    , <&macro_tap &kp N0 &kp N0 &kp E &kp N5 &kp SPC>
+                    ;
+            }; 
             uc_o: uc_o {
                 label = "UNICODE_O";
                 compatible = "zmk,behavior-macro";
@@ -62,7 +88,7 @@
 
         raise_layer {
             bindings = <
-                &trans &kp EXCL &kp N7 &kp N8 &kp N9 &kp PRCNT   &kp CARET &uc_o &kp KP_MULTIPLY &kp LPAR &kp RPAR &trans
+                &trans &kp EXCL &kp N7 &kp N8 &kp N9 &kp PRCNT   &kp CARET &uc_ae &uc_o &uc_a PAR &kp RPAR &trans
                 &trans &kp LGUI &hm_l LALT N4 &hm_l LCTL N5 &hm_shift_l LSFT N6 &trans   &kp LEFT &hm_shift_r RSFT DOWN &hm_r RCTL UP &hm_r RALT RIGHT &hm_r RGUI BSLH &trans
                 &trans &trans &kp N1 &kp N2 &kp N3 &trans   &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &trans
                 &kp LGUI &kp N0 &caps_word &kp RET &trans &kp RALT

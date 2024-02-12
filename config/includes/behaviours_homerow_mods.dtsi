@@ -1,7 +1,7 @@
 // Make sure settings.dtsi is included before this file
 
-#define HM_TAPPING_TERM 300
-#define HM_TAPPING_TERM_FAST 300
+#define HM_TAPPING_TERM 150
+#define HM_TAPPING_TERM_FAST 150
 
 #include "../../zmk-nodefree-config/keypos_def/keypos_42keys.h"
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4
@@ -29,7 +29,7 @@
             #binding-cells = <2>;
             bindings = <&kp>,  <&kp>;
 
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <175>;                // repeat on tap-into-hold
 
@@ -43,7 +43,7 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <175>;
 
@@ -61,7 +61,7 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <175>;
 
@@ -75,7 +75,7 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "balanced";
+            flavor = "'hold-preferred";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <175>;
 
@@ -98,7 +98,7 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "balanced";
+            flavor = "'hold-preferred";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <200>;
         };
