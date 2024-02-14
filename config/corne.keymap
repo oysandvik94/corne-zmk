@@ -12,7 +12,7 @@
 #include "includes/behaviours_homerow_mods.dtsi"
 
 &lt {
-        require-prior-idle-ms = 0;
+        require-prior-idle-ms = <0>;
 };
 
 / {
