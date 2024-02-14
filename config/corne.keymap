@@ -11,11 +11,11 @@
 #include "includes/settings.dtsi"
 #include "includes/behaviours_homerow_mods.dtsi"
 
-/ {
-   &lt {
-         require-prior-idle-ms = <HM_PRIOR_IDLE>;
-   };
+&lt {
+        require-prior-idle-ms = <HM_PRIOR_IDLE>;
+};
 
+/ {
     macros {
             uc_ae: uc_ae {
                 label = "UNICODE_AE";
