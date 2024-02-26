@@ -66,7 +66,7 @@
                 &trans &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U &kp Y &kp SEMI &trans
                 &trans &hm_l LGUI A &hm_l LALT R &hm_l LCTL S &hm_shift_l LSFT T &kp G   &kp M &hm_shift_r RSFT N &hm_r RCTL E &hm_r RALT I &hm_r RGUI O &trans
                 &trans &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp COMMA &kp DOT &kp FSLH &trans
-                &lt 1 TAB &lt 2 SPACE &kp ESC &kp BSPC &lt 2 RET &lt 1 DEL
+                &lt 1 TAB &lt 2 SPACE &lt 3 ESC &kp BSPC &lt 2 RET &lt 1 DEL
             >;
         };
 
@@ -87,6 +87,17 @@
                 &kp LGUI &kp N0 &caps_word &kp RET &trans &kp RALT
             >;
         };
+
+        bluetooth_layer {
+            bindings = <
+                &trans &trans &N7 &N8 &N9 &trans   &trans &trans &trans &trans &trans &trans
+                &trans &trans &bt BT_SEL 3 &bt BT_SEL 4 &bt N6 &trans   &trans &trans &trans &trans &trans &trans
+                &trans &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans   &trans &bt BT_CLR &trans &trans &trans &trans
+                            &trans &trans &trans   &trans &trans &trans
+
+            >;
+        };
+
     };
 };
 
