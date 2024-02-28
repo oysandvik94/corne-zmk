@@ -24,7 +24,7 @@
             bindings = <&kp NB_SEMI>, <&kp NB_COLON>;
             mods = <(MOD_LSFT)>;
         };
-    }
+    };
     macros {
             uc_ae: uc_ae {
                 label = "UNICODE_AE";
