@@ -17,6 +17,14 @@
 };
 
 / {
+    behaviors {
+        nsemi: norwegian_semi {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp NB_SEMI>, <&kp NB_COLON>;
+            mods = <(MOD_LSFT)>;
+        };
+    }
     macros {
             uc_ae: uc_ae {
                 label = "UNICODE_AE";
@@ -64,7 +72,7 @@
 
         default_layer {
             bindings = <
-                &trans &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U &kp Y &kp NB_SEMI &trans
+                &trans &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U &kp Y &nsemi &trans
                 &trans &hm_l LGUI A &hm_l LALT R &hm_l LCTL S &hm_shift_l LSFT T &kp G   &kp M &hm_shift_r RSFT N &hm_r RCTL E &hm_r RALT I &hm_r RGUI O &trans
                 &trans &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp NB_COMMA &kp NB_DOT &kp NB_FSLH &trans
                 &lt 1 TAB &lt 2 SPACE &lt 3 ESC &kp BSPC &lt 2 RET &lt 1 DEL
