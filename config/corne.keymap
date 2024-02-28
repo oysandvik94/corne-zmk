@@ -10,6 +10,7 @@
 #include "../zmk-nodefree-config/helper.h"
 #include "includes/settings.dtsi"
 #include "includes/behaviours_homerow_mods.dtsi"
+#include "keys_nb.h"
 
 &lt {
         require-prior-idle-ms = <0>;
@@ -63,26 +64,26 @@
 
         default_layer {
             bindings = <
-                &trans &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U &kp Y &kp SEMI &trans
+                &trans &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U &kp Y &kp NB_SEMI &trans
                 &trans &hm_l LGUI A &hm_l LALT R &hm_l LCTL S &hm_shift_l LSFT T &kp G   &kp M &hm_shift_r RSFT N &hm_r RCTL E &hm_r RALT I &hm_r RGUI O &trans
-                &trans &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp COMMA &kp DOT &kp FSLH &trans
+                &trans &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp NB_COMMA &kp NB_DOT &kp NB_FSLH &trans
                 &lt 1 TAB &lt 2 SPACE &lt 3 ESC &kp BSPC &lt 2 RET &lt 1 DEL
             >;
         };
 
         lower_layer {
             bindings = <
-                &trans &kp EXCL &kp PRCNT &kp ASTERISK &kp HASH &kp N5   &kp CARET &kp LPAR &kp RPAR &kp TILDE &kp DQT &trans
-                &trans &kp DOLLAR &kp EXCLAMATION &kp PLUS &kp EQUAL &kp PIPE   &kp AMPERSAND &kp LBRC &kp RBRC &kp SQT &kp GRAVE &trans
-                &trans &trans &kp AT_SIGN &kp MINUS &kp UNDER &trans   &trans &kp LBKT &kp RBKT &kp CARET &kp BSLH &trans
+                &trans &kp NB_EXCL &kp NB_PRCNT &kp NB_ASTERISK &kp NB_HASH &kp N5   &kp NB_CARET &kp NB_LPAR &kp NB_RPAR &kp NB_TILDE &kp NB_DQT &trans
+                &trans &kp NB_DOLLAR &kp NB_EXCLAMATION &kp NB_PLUS &kp NB_EQUAL &kp NB_PIPE   &kp NB_AMPERSAND &kp NB_LBRC &kp NB_RBRC &kp NB_SQT &kp NB_GRAVE &trans
+                &trans &trans &kp NB_AT_SIGN &kp NB_MINUS &kp NB_UNDER &trans   &trans &kp NB_LBKT &kp NB_RBKT &kp NB_CARET &kp NB_BSLH &trans
                 &kp LGUI &trans &kp SPACE &kp RET &trans &kp RALT
             >;
         };
 
         raise_layer {
             bindings = <
-                &trans &kp EXCL &kp N7 &kp N8 &kp N9 &kp PRCNT   &kp CARET &uc_ae &uc_o &uc_a &kp RPAR &trans
-                &trans &kp LGUI &hm_l LALT N4 &hm_l LCTL N5 &hm_shift_l LSFT N6 &trans   &kp LEFT &hm_shift_r RSFT DOWN &hm_r RCTL UP &hm_r RALT RIGHT &hm_r RGUI BSLH &trans
+                &trans &kp NB_EXCL &kp N7 &kp N8 &kp N9 &kp NB_PRCNT   &kp NB_CARET &kp NB_AE &kp NB_O_SLASH &kp NB_A_RING &kp NB_RPAR &trans
+                &trans &kp LGUI &hm_l LALT N4 &hm_l LCTL N5 &hm_shift_l LSFT N6 &trans   &kp LEFT &hm_shift_r RSFT DOWN &hm_r RCTL UP &hm_r RALT RIGHT &hm_r RGUI NB_BSLH &trans
                 &trans &trans &kp N1 &kp N2 &kp N3 &trans   &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &trans
                 &kp LGUI &kp N0 &caps_word &kp RET &trans &kp RALT
             >;
