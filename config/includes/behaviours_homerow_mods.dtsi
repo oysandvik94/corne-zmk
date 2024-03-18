@@ -31,7 +31,7 @@
 
             flavor = "tap-preferred";
             tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <175>;                // repeat on tap-into-hold
+            quick-tap-ms = <0>;                // repeat on tap-into-hold
 
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
             hold-trigger-on-release;
@@ -45,7 +45,7 @@
 
             flavor = "tap-preferred";
             tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <175>;
+            quick-tap-ms = <0>;
 
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
             hold-trigger-on-release;
@@ -63,7 +63,7 @@
 
             flavor = "tap-preferred";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            quick-tap-ms = <175>;
+            quick-tap-ms = <0>;
 
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
             // hold-trigger-on-release;
@@ -77,7 +77,7 @@
 
             flavor = "tap-preferred";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            quick-tap-ms = <175>;
+            quick-tap-ms = <0>;
 
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
             // hold-trigger-on-release;

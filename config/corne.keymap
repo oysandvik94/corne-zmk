@@ -45,46 +45,19 @@
         };
     };
     macros {
-            uc_ae: uc_ae {
-                label = "UNICODE_AE";
+        tilde: tilde {
+               label = "TILDE";
+               compatible = "zmk,behavior-macro";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 tap-ms = <0>;
                 wait-ms = <0>;
                 bindings
-                    = <&macro_press &kp LCTRL &kp LSHFT>
-                    , <&macro_tap &kp U>
-                    , <&macro_release &kp LCTRL &kp LSHFT>
-                    , <&macro_tap &kp N0 &kp N0 &kp E &kp N6 &kp SPC>
+                    = <&macro_press &kp NB_TILDE>
+                    , <&macro_press &kp NB_TILDE>
                     ;
-            }; 
-            uc_a: uc_a {
-                label = "UNICODE_A";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                tap-ms = <0>;
-                wait-ms = <0>;
-                bindings
-                    = <&macro_press &kp LCTRL &kp LSHFT>
-                    , <&macro_tap &kp U>
-                    , <&macro_release &kp LCTRL &kp LSHFT>
-                    , <&macro_tap &kp N0 &kp N0 &kp E &kp N5 &kp SPC>
-                    ;
-            }; 
-            uc_o: uc_o {
-                label = "UNICODE_O";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                tap-ms = <0>;
-                wait-ms = <0>;
-                bindings
-                    = <&macro_press &kp LCTRL &kp LSHFT>
-                    , <&macro_tap &kp U>
-                    , <&macro_release &kp LCTRL &kp LSHFT>
-                    , <&macro_tap &kp N0 &kp N0 &kp F &kp N8 &kp SPC>
-                    ;
-            }; 
-        };
+       }
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -100,7 +73,7 @@
 
         lower_layer {
             bindings = <
-                &trans &kp NB_EXCL &kp NB_PRCNT &kp NB_ASTERISK &kp NB_HASH &kp N5   &kp NB_CARET &kp NB_LPAR &kp NB_RPAR &kp NB_TILDE &kp NB_DQT &trans
+                &trans &kp NB_EXCL &kp NB_PRCNT &kp NB_ASTERISK &kp NB_HASH &kp N5   &kp NB_CARET &kp NB_LPAR &kp NB_RPAR &tilde &kp NB_DQT &trans
                 &trans &kp NB_DOLLAR &kp NB_EXCLAMATION &kp NB_PLUS &kp NB_EQUAL &kp NB_PIPE   &kp NB_AMPERSAND &kp NB_LBRC &kp NB_RBRC &kp NB_SQT &kp NB_GRAVE &trans
                 &trans &trans &kp NB_AT_SIGN &kp NB_MINUS &kp NB_UNDER &trans   &trans &kp NB_LBKT &kp NB_RBKT &kp NB_CARET &kp NB_BSLH &trans
                 &kp LGUI &trans &kp SPACE &kp RET &trans &kp RALT
