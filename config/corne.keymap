@@ -12,8 +12,13 @@
 #include "includes/behaviours_homerow_mods.dtsi"
 #include "keys_nb.h"
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS DELETE BACKSPACE>;
+};
+
 &lt {
         require-prior-idle-ms = <0>;
+        tapping-term-ms = <150>;
         quick-tap-ms = <0>;
 };
 
@@ -56,7 +61,7 @@
                     = <&macro_press &kp NB_TILDE>
                     , <&macro_press &kp NB_TILDE>
                     ;
-       }
+       };
     };
 
     keymap {
