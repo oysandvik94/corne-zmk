@@ -62,7 +62,7 @@
                     , <&macro_press &kp NB_TILDE>
                     ;
        };
-       caret: tilde {
+       tilde: tilde {
               label = "caret";
               compatible = "zmk,behavior-macro";
               compatible = "zmk,behavior-macro";
