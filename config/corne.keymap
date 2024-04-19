@@ -53,37 +53,34 @@
         tilde: tilde {
                label = "TILDE";
                compatible = "zmk,behavior-macro";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                tap-ms = <0>;
-                wait-ms = <0>;
-                bindings
-                    = <&macro_press &kp NB_TILDE>
-                    , <&macro_press &kp NB_TILDE>
-                    ;
+               #binding-cells = <0>;
+               tap-ms = <0>;
+               wait-ms = <0>;
+               bindings
+                   = <&macro_tap &kp NB_TILDE>
+                   , <&macro_tap &kp NB_TILDE>
+                   ;
        };
        grave: grave {
               label = "grave";
-              compatible = "zmk,behavior-macro";
               compatible = "zmk,behavior-macro";
               #binding-cells = <0>;
               tap-ms = <0>;
               wait-ms = <0>;
               bindings
-                   = <&macro_press &kp NB_GRAVE>
-                   , <&macro_press &kp NB_GRAVE>
+                   = <&macro_tap &kp NB_GRAVE>
+                   , <&macro_tap &kp NB_GRAVE>
                ;
         };
        caret: caret {
               label = "caret";
               compatible = "zmk,behavior-macro";
-              compatible = "zmk,behavior-macro";
               #binding-cells = <0>;
               tap-ms = <0>;
               wait-ms = <0>;
               bindings
-                   = <&macro_press &kp NB_CARET>
-                   , <&macro_press &kp NB_CARET>
+                   = <&macro_tap &kp NB_CARET>
+                   , <&macro_tap &kp NB_CARET>
                ;
         };
     };
