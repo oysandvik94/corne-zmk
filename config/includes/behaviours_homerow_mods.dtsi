@@ -75,12 +75,12 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "balanced";
+            flavor = "tap-preferred";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <0>;
 
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
-            // hold-trigger-on-release;
+            hold-trigger-on-release;
         };
 
         /*
