@@ -97,16 +97,16 @@
             >;
         };
 
-        lower_layer {
+        symbol_layer {
             bindings = <
                 &trans &kp NB_EXCL &kp NB_PRCNT &kp NB_ASTERISK &kp NB_HASH &kp N5   &kp NB_CARET &kp NB_LPAR &kp NB_RPAR &tilde &kp NB_DQT &trans
-                &trans &kp NB_DOLLAR &kp NB_EXCLAMATION &kp NB_PLUS &kp NB_EQUAL &kp NB_PIPE   &kp NB_AMPERSAND &kp NB_LBRC &kp NB_RBRC &kp NB_SQT &grave &trans
+                &trans &kp NB_DOLLAR &kp NB_PLUS &kp NB_EXCLAMATION  &kp NB_EQUAL &kp NB_PIPE   &kp NB_AMPERSAND &kp NB_LBRC &kp NB_RBRC &kp NB_SQT &grave &trans
                 &trans &trans &kp NB_AT_SIGN &kp NB_MINUS &kp NB_UNDER &trans   &trans &kp NB_LBKT &kp NB_RBKT &caret &kp NB_BSLH &trans
                 &kp LGUI &trans &kp SPACE &kp RET &trans &kp RALT
             >;
         };
 
-        raise_layer {
+        number_layer {
             bindings = <
                 &trans &kp NB_EXCL &kp N7 &kp N8 &kp N9 &kp NB_PRCNT   &kp NB_CARET &kp NB_AE &kp NB_O_SLASH &kp NB_A_RING &kp NB_RPAR &trans
                 &trans &kp LGUI &hm_l LALT N4 &hm_l LCTL N5 &hm_shift_l LSFT N6 &trans   &kp LEFT &hm_shift_r RSFT DOWN &hm_r RCTL UP &hm_r LALT RIGHT &hm_r RGUI NB_BSLH &trans
