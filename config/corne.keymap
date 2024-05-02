@@ -13,6 +13,7 @@
 #include "keys_nb.h"
 
 &caps_word {
+    /delete-property/ ignore-modifiers;
     continue-list = <NB_UNDER NB_MINUS DELETE BACKSPACE>;
 };
 
