@@ -111,7 +111,7 @@
             bindings = <
                 &trans &kp NB_EXCL &kp N7 &kp N8 &kp N9 &kp NB_PRCNT   &kp NB_CARET &kp NB_AE &kp NB_O_SLASH &kp NB_A_RING &kp NB_RPAR &trans
                 &trans &kp LGUI &kp N4 &kp N5 &kp N6 &trans   &kp LEFT &kp DOWN &hm_r RCTL UP &hm_r LALT RIGHT &hm_r RGUI NB_BSLH &trans
-                &trans &kp LGUI &hm_l LALT N1 &hm_l LCTL N2 &hm_shift_l LSFT N3 &trans &trans &kp RSFT &kp RCTL &kp LALT &kp LGUI &trans &trans 
+                &trans &kp LGUI &hm_l LALT N1 &hm_l LCTL N2 &hm_shift_l LSFT N3 &trans &trans &kp RSFT &kp RCTL &kp LALT &kp LGUI &trans 
                 &kp LGUI &kp N0 &caps_word &kp RET &trans &kp RALT
             >;
         };
