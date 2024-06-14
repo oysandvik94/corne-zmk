@@ -28,19 +28,19 @@
         ncomma: norwegian_comma {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp NB_COMMA>, <&kp NB_LESS_THAN>;
+            bindings = <&hm_r RCTL NB_COMMA>, <&hm_r RCTL NB_LESS_THAN>;
             mods = <(MOD_LSFT)>;
         };
         ndot: norwegian_dot {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp NB_DOT>, <&kp NB_GREATER_THAN>;
+            bindings = <&hm_r LALT NB_DOT>, <&hm_r LALT NB_GREATER_THAN>;
             mods = <(MOD_LSFT)>;
         };
         nfslasn: norwegian_forward_slash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp NB_FSLH>, <&kp NB_QUESTION>;
+            bindings = <&hm_r RGUI NB_FSLH>, <&hm_r RGUI NB_QUESTION>;
             mods = <(MOD_LSFT)>;
         };
         nsemi: norwegian_semi {
@@ -92,8 +92,8 @@
         default_layer {
             bindings = <
                 &trans &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U &kp Y &nsemi &trans
-                &trans &hm_l LGUI A &hm_l LALT R &hm_l LCTL S &hm_shift_l LSFT T &kp G   &kp M &hm_shift_r RSFT N &hm_r RCTL E &hm_r LALT I &hm_r RGUI O &trans
-                &trans &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &ncomma &ndot &nfslasn &trans
+                &trans &kc A &kp R &kp S &kp T &kp G   &kp M &kp N &kp E &kp I &kp O &trans
+                &trans &hm_l LGUI Z &hm_l LALT X &hm_l LCTL C &hm_shift_l LSFT D &kp V   &kp K &hm_shift_r RSFT H &ncomma &ndot &nfslasn &trans
                 &lt 1 TAB &lt 2 SPACE &lt 3 ESC &kp BSPC &lt 2 RET &lt 1 DEL
             >;
         };
