@@ -19,7 +19,7 @@
 
 &lt {
         require-prior-idle-ms = <0>;
-        tapping-term-ms = <150>;
+        tapping-term-ms = <125>;
         quick-tap-ms = <0>;
 };
 
