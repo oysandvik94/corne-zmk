@@ -1,6 +1,6 @@
 // Make sure settings.dtsi is included before this file
 
-#define HM_TAPPING_TERM 150
+#define HM_TAPPING_TERM 125
 #define HM_TAPPING_TERM_FAST 100
 
 #include "../../zmk-nodefree-config/keypos_def/keypos_42keys.h"
