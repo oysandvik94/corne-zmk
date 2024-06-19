@@ -50,7 +50,7 @@
         nsemi: norwegian_semi {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp NB_SEMI>, <&kp NB_SEMI>;
+            bindings = <&kp NB_SEMI>, <&kp NB_COLON>;
             mods = <(MOD_LSFT)>;
         };
     };
@@ -114,7 +114,7 @@
                 &trans &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L  &kp U &kp Y &nsemi &trans
                 &trans &kp A &kp R &kp S &kp T &kp G        &kp M &kp N &kp E &kp I &kp O &trans
                 &trans &kp Z &kp X &kp C &kp D &kp V      &kp K &kp H &ncomma &ndot &nfslasn &trans
-                &sl 2 &kp SPACE &kp ESC     &kp BSPC &kp LSFT &sl 1
+                &sl 2 &kp SPACE &kp ESC     &kp BSPC &sk LSFT &sl 1
             >;
         };
 
