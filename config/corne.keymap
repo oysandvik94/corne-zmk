@@ -23,7 +23,7 @@
         quick-tap-ms = <0>;
 };
 
-&sc { 
+&sk { 
         quick-release; // Default releases on key up. This release the mod on key down and avoids "THis" problem
         release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
     };
@@ -132,7 +132,7 @@
             bindings = <
                 &trans &kp NB_EXCL &kp N7 &kp N8 &kp N9 &kp NB_PRCNT   &kp NB_CARET &kp NB_AE &kp NB_O_SLASH &kp NB_A_RING &kp NB_RPAR &trans
                 &trans &kp LGUI &kp N4 &kp N5 &kp N6 &trans   &kp LEFT &kp DOWN &hm_r RCTL UP &hm_r LALT RIGHT &hm_r RGUI NB_BSLH &trans
-                &trans &kp LGUI &kp N1 &kp N2 &kp N3 &trans       &trans &sc RSFT &sc RCTL &sc LALT &sc LGUI &trans 
+                &trans &kp LGUI &kp N1 &kp N2 &kp N3 &trans       &trans &sk RSFT &sk RCTL &sk LALT &sk LGUI &trans 
                 &kp LGUI &kp N0 &caps_word      &kp DEL &kp RET &kp TAB
             >;
         };
