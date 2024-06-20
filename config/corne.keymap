@@ -16,6 +16,20 @@
     continue-list = <NB_UNDER NB_MINUS DELETE BACKSPACE>;
 };
 
+#define STRINGIFY(x) #x
+#define EXPAND_AND_STRINGIFY(x) STRINGIFY(x)
+#define MACRO(NAME, BINDINGS) \
+  mcr_##NAME: mcr_##NAME { \
+    label = EXPAND_AND_STRINGIFY(mcr_##NAME); \
+    compatible = "zmk,behavior-macro"; \
+    #binding-cells = <0>; \
+    wait-ms = <20>; \
+    tap-ms = <10>; \
+    bindings = <BINDINGS>; \
+  };
+
+MACRO(tmux, &macro_press &kp LCTR &macro_tap &kp SPACE &macro_release)
+
 &lt {
         require-prior-idle-ms = <0>;
         tapping-term-ms = <125>;
@@ -28,6 +42,12 @@
 
 / {
     behaviors {
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LSFT>, <&caps_word>;
+        };
         ncomma: norwegian_comma {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -51,6 +71,14 @@
             #binding-cells = <0>;
             bindings = <&kp NB_SEMI>, <&kp NB_COLON>;
             mods = <(MOD_LSFT)>;
+        };
+    };
+     combos {
+        compatible = "zmk,combos";
+        combo_tmux {
+            timeout-ms = <50>;
+            key-positions = <37 40>;
+            bindings = <&tmux>;
         };
     };
     macros {
@@ -113,7 +141,7 @@
                 &trans &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L  &kp U &kp Y &nsemi &trans
                 &trans &kp A &kp R &kp S &kp T &kp G        &kp M &kp N &kp E &kp I &kp O &trans
                 &trans &kp Z &kp X &kp C &kp D &kp V      &kp K &kp H &ncomma &ndot &nfslasn &trans
-                &sl 2 &kp SPACE &kp ESC     &kp BSPC &sk LSFT &sl 1
+                &sl 2 &kp SPACE &kp ESC     &kp BSPC &td0 &sl 1
             >;
         };
 
@@ -122,7 +150,7 @@
                 &trans &kp NB_EXCL &kp NB_PRCNT &kp NB_ASTERISK &kp NB_HASH &kp N5   &kp NB_CARET &kp NB_LPAR &kp NB_RPAR &tilde &kp NB_DQT &trans
                 &trans &kp NB_DOLLAR &kp NB_PLUS &kp NB_EXCLAMATION  &kp NB_EQUAL &kp NB_PIPE   &kp NB_AMPERSAND &kp NB_LBRC &kp NB_RBRC &kp NB_SQT &grave &trans
                 &trans &trans &kp NB_AT_SIGN &kp NB_MINUS &kp NB_UNDER &trans   &trans &kp NB_LBKT &kp NB_RBKT &caret &kp NB_BSLH &trans
-                &kp LGUI &caps_word &kp SPACE &kp RET &trans &kp RALT
+                &sl 3 &caps_word &kp SPACE &kp RET &trans &kp RALT
             >;
         };
 
