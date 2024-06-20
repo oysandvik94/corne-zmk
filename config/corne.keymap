@@ -16,19 +16,6 @@
     continue-list = <NB_UNDER NB_MINUS DELETE BACKSPACE>;
 };
 
-#define STRINGIFY(x) #x
-#define EXPAND_AND_STRINGIFY(x) STRINGIFY(x)
-#define MACRO(NAME, BINDINGS) \
-  mcr_##NAME: mcr_##NAME { \
-    label = EXPAND_AND_STRINGIFY(mcr_##NAME); \
-    compatible = "zmk,behavior-macro"; \
-    #binding-cells = <0>; \
-    wait-ms = <20>; \
-    tap-ms = <10>; \
-    bindings = <BINDINGS>; \
-  };
-
-
 &lt {
         require-prior-idle-ms = <0>;
         tapping-term-ms = <125>;
@@ -90,7 +77,7 @@
                bindings
                    = <&macro_press &kp LCTL>
                    , <&macro_tap &kp SPACE>
-                   , <&maco_release &kp LCTL>
+                   , <&macro_release &kp LCTL>
                    ;
        };
         tilde: tilde {
