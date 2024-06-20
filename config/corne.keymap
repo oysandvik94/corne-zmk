@@ -28,7 +28,8 @@
     bindings = <BINDINGS>; \
   };
 
-MACRO(tmux, &macro_press &kp LCTL &macro_tap &kp SPACE &macro_release LCTL)
+// MACRO(tmux, &macro_press &kp LCTL &macro_tap &kp SPACE &macro_release LCTL)
+    MACRO(tmux, &macro_press &kp LALT &macro_tap &kp KP_N2 &kp KP_N4 &kp KP_N8 &macro_release &kp LALT
 
 &lt {
         require-prior-idle-ms = <0>;
