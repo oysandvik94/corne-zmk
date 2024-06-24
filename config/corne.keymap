@@ -16,7 +16,7 @@
     continue-list = <NB_UNDER NB_MINUS DELETE BACKSPACE>;
 };
 &num_word {  // num-word, requires PR #1451
-    layers = <NUM>;
+    layers = <2>;
     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
 };
 
