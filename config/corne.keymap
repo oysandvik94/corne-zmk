@@ -43,7 +43,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <400>;
             bindings = <&sl 2>, <&num_word>;
-         }
+         };
         ncomma: norwegian_comma {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
