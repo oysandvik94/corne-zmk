@@ -103,7 +103,7 @@
        };
        grave: grave {
               label = "grave";
-              see = "zmk,behavior-macro";
+              compatible = "zmk,behavior-macro";
               #binding-cells = <0>;
               tap-ms = <0>;
               wait-ms = <0>;
@@ -140,8 +140,8 @@
         symbol_layer {
             bindings = <
                 &trans &kp NB_AT_SIGN &kp NB_PRCNT &kp NB_ASTERISK &kp NB_HASH &kp N5   &kp NB_CARET &kp NB_LPAR &kp NB_RPAR &tilde &kp NB_DQT &trans
-                &trans &kp NB_DOLLAR &kp NB_PLUS &kp NB_EXCLAMATION  &kp NB_EQUAL &kp NB_PIPE   &kp NB_AMPERSAND &kp NB_LBRC &kp NB_RBRC &kp NB_SQT &grave &trans
-                &trans &kp NB_MINUS &kp NB_UNDER &sk LCTL &kp NB_AT_SIGN &trans   &trans &kp NB_LBKT &kp NB_RBKT &caret &kp NB_BSLH &trans
+                &trans &kp NB_DOLLAR &kp NB_PLUS &kp NB_EXCLAMATION  &kp NB_EQUAL &kp NB_PIPE   &kp NB_AMPERSAND &kp NB_LBKT &kp NB_RBKT &kp NB_SQT &grave &trans
+                &trans &kp NB_MINUS &kp NB_UNDER &sk LCTL &kp NB_AT_SIGN &trans   &trans &kp NB_LBRC &kp NB_RBRC &caret &kp NB_BSLH &trans
                 &sl 3 &caps_word &kp SPACE &kp RET &trans &kp RALT
             >;
         };
