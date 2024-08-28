@@ -36,12 +36,12 @@ ZMK_HOLD_TAP(smart_num,
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&num_dance>;
+    bindings = <&mo>, <&num_word NUM_LAYER>;
 )
-ZMK_TAP_DANCE(num_dance,
-    tapping-term-ms = <200>;
-    bindings = <&num_word NUM_LAYER>, <&sl NUM_LAYER>;  // reverse this for sticky-num on single tap
-)
+// ZMK_TAP_DANCE(num_dance,
+//     tapping-term-ms = <200>;
+//     bindings = <&num_word NUM_LAYER>, <&sl NUM_LAYER>;  // reverse this for sticky-num on single tap
+// )
 
 
 &lt {
@@ -189,7 +189,7 @@ ZMK_TAP_DANCE(num_dance,
         mouse_layer {
             bindings = <
                 &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans   U_MS_L U_MS_D U_MS_U U_MS_R &trans &trans
+                &trans &trans &trans &trans &trans &kp N7   U_MS_L U_MS_D U_MS_U U_MS_R &trans &trans
                 &trans &trans &trans &trans &trans &trans       &trans &sk LSFT &sk RCTL &sk LALT &sk LGUI &trans 
                 &trans &mkp MB1 &kp ESC      &kp DEL &mkp MB2 &kp TAB
             >;
