@@ -39,7 +39,7 @@ ZMK_HOLD_TAP(smart_num,
 )
 ZMK_TAP_DANCE(num_dance,
     tapping-term-ms = <200>;
-    bindings = <&num_word NUM>, <&sl NUM_LAYER>;  // reverse this for sticky-num on single tap
+    bindings = <&num_word NUM_LAYER>, <&sl NUM_LAYER>;  // reverse this for sticky-num on single tap
 )
 
 
