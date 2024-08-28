@@ -32,18 +32,18 @@ ZMK_MOD_MORPH(smart_shft,
 
 
 // tap: num-word | double-tap: sticky num-layer | hold: num-layer
-#define SMART_NUM &smart_num NUM_LAYER
+#define SMART_NUM &smart_num NUM_LAYER 0
 ZMK_BEHAVIOR(smart_num,
     hold-trigger-key-positions = <>;
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&num_word NUM_LAYER 0>;
+    bindings = <&mo>, <&num_dance>;
 )
-// ZMK_TAP_DANCE(num_dance,
-//     tapping-term-ms = <200>;
-//     bindings = <&num_word NUM_LAYER>, <&sl NUM_LAYER>;  // reverse this for sticky-num on single tap
-// )
+ZMK_TAP_DANCE(num_dance,
+    tapping-term-ms = <200>;
+    bindings = <&num_word NUM_LAYER>, <&sl NUM_LAYER>;  // reverse this for sticky-num on single tap
+)
 
 
 &lt {
