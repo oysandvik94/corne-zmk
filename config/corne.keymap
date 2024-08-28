@@ -12,6 +12,16 @@
 #include "includes/behaviours_homerow_mods.dtsi"
 #include "keys_nb.h"
 
+
+ZMK_MOD_MORPH(smart_shft,
+    bindings = <&sk LSHFT>, <&caps_word>;
+    mods = <(MOD_LSFT)>;
+)
+&caps_word {  // mods deactivate caps-word, requires PR #1451
+    /delete-property/ ignore-modifiers;
+};
+
+
 &caps_word {
     continue-list = <NB_UNDER NB_MINUS DELETE BACKSPACE>;
 };
@@ -137,7 +147,7 @@
                 &trans &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L  &kp U &kp Y &nsemi &trans
                 &trans &kp A &kp R &kp S &kp T &kp G        &kp M &kp N &kp E &kp I &kp O &trans
                 &trans &kp Z &kp X &kp C &kp D &kp V      &kp K &kp H &ncomma &ndot &nfslasn &trans
-                &td1 &kp SPACE &kp ESC     &kp BSPC &td0 &sl 1
+                &td1 &kp SPACE &kp ESC     &kp BSPC &smart_shft &sl 1
             >;
         };
 
@@ -153,7 +163,7 @@
         number_layer {
             bindings = <
                 &trans &kp NB_EXCL &kp N7 &kp N8 &kp N9 &kp NB_PRCNT   &kp NB_CARET &kp NB_AE &kp NB_O_SLASH &kp NB_A_RING &kp NB_RPAR &trans
-                &trans &kp LGUI &kp N4 &kp N5 &kp N6 &trans   &kp LEFT &kp DOWN &hm_r RCTL UP &hm_r LALT RIGHT &hm_r RGUI NB_BSLH &trans
+                &trans &kp LGUI &kp N4 &kp N5 &kp N6 &trans   &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp NB_BSLH &trans
                 &trans &kp N0 &kp N1 &kp N2 &kp N3 &trans       &trans &sk LSFT &sk RCTL &sk LALT &sk LGUI &trans 
                 &kp LGUI &kp SPACE &kp ESC      &kp DEL &kp RET &kp TAB
             >;
@@ -169,6 +179,16 @@
             >;
         };
 
+        number_layer {
+            bindings = <
+                &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans   U_MS_L U_MS_D U_MS_U U_MS_R &trans &trans
+                &trans &trans &trans &trans &trans &trans       &trans &sk LSFT &sk RCTL &sk LALT &sk LGUI &trans 
+                &trans &mkp MB1 &kp ESC      &kp DEL &mkp MB2 &kp TAB
+            >;
+        };
+
     };
 };
 
+/* vim: set ft=c tw=174: */
