@@ -33,8 +33,7 @@ ZMK_MOD_MORPH(smart_shft,
 
 // tap: num-word | double-tap: sticky num-layer | hold: num-layer
 #define SMART_NUM &smart_num NUM_LAYER 0
-ZMK_BEHAVIOR(smart_num,
-    hold-trigger-key-positions = <>;
+ZMK_HOLD_TAP(smart_num,
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
@@ -69,21 +68,18 @@ ZMK_TAP_DANCE(num_dance,
             #binding-cells = <0>;
             bindings = <&kp NB_DOT>, <&kp NB_GREATER_THAN>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         nfslasn: norwegian_forward_slash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp NB_FSLH>, <&kp NB_QUESTION>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         nsemi: norwegian_semi {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp NB_SEMI>, <&kp NB_COLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
      combos {
