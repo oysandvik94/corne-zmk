@@ -12,6 +12,7 @@
 #include "includes/settings.dtsi"
 #include "keys_nb.h"
 
+#define QUICK_TAP_MS 175
 
 ZMK_MOD_MORPH(smart_shft,
     bindings = <&sk LSHFT>, <&caps_word>;
