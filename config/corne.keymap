@@ -9,7 +9,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include "zmk-helpers/helper.h"
 #include "includes/settings.dtsi"
-#include "includes/behaviours_homerow_mods.dtsi"
 #include "keys_nb.h"
 
 
