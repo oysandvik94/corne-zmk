@@ -12,6 +12,12 @@
 #include "includes/settings.dtsi"
 #include "keys_nb.h"
 
+#define DEF_LAYER 0
+#define SYM_LAYER 1
+#define NUM_LAYER 2
+#define BL_LAYER 3
+#define MOUSE_LAYER 4
+
 #define QUICK_TAP_MS 175
 
 ZMK_MOD_MORPH(smart_shft,
@@ -24,7 +30,7 @@ ZMK_MOD_MORPH(smart_shft,
 
 
 // tap: num-word | double-tap: sticky num-layer | hold: num-layer
-#define SMART_NUM &smart_num NUM 0
+#define SMART_NUM &smart_num NUM_LAYER 0
 ZMK_HOLD_TAP(smart_num,
     flavor = "balanced";
     tapping-term-ms = <200>;
@@ -33,7 +39,7 @@ ZMK_HOLD_TAP(smart_num,
 )
 ZMK_TAP_DANCE(num_dance,
     tapping-term-ms = <200>;
-    bindings = <&num_word NUM>, <&sl NUM>;  // reverse this for sticky-num on single tap
+    bindings = <&num_word NUM>, <&sl NUM_LAYER>;  // reverse this for sticky-num on single tap
 )
 
 
@@ -49,18 +55,6 @@ ZMK_TAP_DANCE(num_dance,
 
 / {
     behaviors {
-        td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&sk LSFT>, <&caps_word>;
-        };
-        td1: tap_num {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&sl 2>, <&num_word>;
-         };
         ncomma: norwegian_comma {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -154,7 +148,7 @@ ZMK_TAP_DANCE(num_dance,
                 &trans &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L  &kp U &kp Y &nsemi &trans
                 &trans &kp A &kp R &kp S &kp T &kp G        &kp M &kp N &kp E &kp I &kp O &trans
                 &trans &kp Z &kp X &kp C &kp D &kp V      &kp K &kp H &ncomma &ndot &nfslasn &trans
-                &td1 &kp SPACE &kp ESC     &kp BSPC &smart_shft &sl 1
+                SMART_NUM &kp SPACE &kp ESC     &kp BSPC &smart_shft &sl SYM_LAYER
             >;
         };
 
@@ -163,7 +157,7 @@ ZMK_TAP_DANCE(num_dance,
                 &trans &kp NB_AT_SIGN &kp NB_PRCNT &kp NB_ASTERISK &kp NB_HASH &kp N5   &kp NB_CARET &kp NB_LPAR &kp NB_RPAR &tilde &grave &trans
                 &trans &kp NB_DOLLAR &kp NB_PLUS &kp NB_EXCLAMATION  &kp NB_EQUAL &kp NB_PIPE   &kp NB_AMPERSAND &kp NB_LBKT &kp NB_RBKT &kp NB_SQT &kp NB_DQT &trans
                 &trans &kp NB_MINUS &kp NB_UNDER &sk LCTL &kp NB_AT_SIGN &trans   &trans &kp NB_LBRC &kp NB_RBRC &caret &kp NB_BSLH &trans
-                &sl 3 &caps_word &kp SPACE &kp RET &trans &kp RALT
+                &sl BL_LAYER &caps_word &kp SPACE &kp RET &trans &kp RALT
             >;
         };
 
@@ -186,7 +180,7 @@ ZMK_TAP_DANCE(num_dance,
             >;
         };
 
-        number_layer {
+        mouse_layer {
             bindings = <
                 &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans   U_MS_L U_MS_D U_MS_U U_MS_R &trans &trans
