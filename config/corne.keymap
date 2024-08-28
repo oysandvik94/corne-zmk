@@ -11,6 +11,7 @@
 #include "zmk-helpers/helper.h"
 #include "includes/settings.dtsi"
 #include "includes/mouse.dtsi"
+#include <behaviors/mouse_keys.dtsi>
 #include "keys_nb.h"
 
 #define DEF_LAYER 0
@@ -90,7 +91,7 @@ ZMK_TAP_DANCE(num_dance,
             bindings = <&tmux>;
         };
         combo_mouse {
-            timeout-ms = <10>;
+            timeout-ms = <30>;
             key-positions = <36 41>;
             bindings = <&tog MOUSE_LAYER>;
         };
