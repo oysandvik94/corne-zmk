@@ -27,11 +27,12 @@ ZMK_MOD_MORPH(smart_shft,
 )
 &caps_word {  // mods deactivate caps-word, requires PR #1451
     /delete-property/ ignore-modifiers;
+      continue-list = <NB_UNDER NB_MINUS DELETE BACKSPACE>;
 };
 
 
 // tap: num-word | double-tap: sticky num-layer | hold: num-layer
-#define SMART_NUM &smart_num NUM_LAYER 0
+#define SMART_NUM &smart_num NUM_LAYER
 ZMK_HOLD_TAP(smart_num,
     flavor = "balanced";
     tapping-term-ms = <200>;
@@ -61,7 +62,6 @@ ZMK_HOLD_TAP(smart_num,
             #binding-cells = <0>;
             bindings = <&kp NB_COMMA>, <&kp NB_LESS_THAN>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         ndot: norwegian_dot {
             compatible = "zmk,behavior-mod-morph";
@@ -93,7 +93,7 @@ ZMK_HOLD_TAP(smart_num,
             bindings = <&tmux>;
         };
         combo_mouse {
-            timeout-ms = <200>;
+            timeout-ms = <50>;
             key-positions = <36 41>;
             bindings = <&tog MOUSE_LAYER>;
         };
