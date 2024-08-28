@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include "../zmk-nodefree-config/helper.h"
+#include "zmk-helpers/helper.h"
 #include "includes/settings.dtsi"
 #include "includes/behaviours_homerow_mods.dtsi"
 #include "keys_nb.h"
@@ -165,7 +166,7 @@ ZMK_MOD_MORPH(smart_shft,
                 &trans &kp NB_EXCL &kp N7 &kp N8 &kp N9 &kp NB_PRCNT   &kp NB_CARET &kp NB_AE &kp NB_O_SLASH &kp NB_A_RING &kp NB_RPAR &trans
                 &trans &kp LGUI &kp N4 &kp N5 &kp N6 &trans   &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp NB_BSLH &trans
                 &trans &kp N0 &kp N1 &kp N2 &kp N3 &trans       &trans &sk LSFT &sk RCTL &sk LALT &sk LGUI &trans 
-                &kp LGUI &kp SPACE &kp ESC      &kp DEL &kp RET &kp TAB
+                &kp DEL &kp SPACE &kp ESC      &kp BSPC &kp RET &kp TAB
             >;
         };
 
