@@ -10,6 +10,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include "zmk-helpers/helper.h"
 #include "includes/settings.dtsi"
+#include "includes/mouse.dtsi"
 #include "keys_nb.h"
 
 #define DEF_LAYER 0
