@@ -91,8 +91,8 @@ ZMK_TAP_DANCE(num_dance,
             bindings = <&tmux>;
         };
         combo_mouse {
-            timeout-ms = <30>;
-            key-positions = <36 41>;
+            timeout-ms = <100>;
+            key-positions = <38 39>;
             bindings = <&tog MOUSE_LAYER>;
         };
     };
@@ -186,10 +186,10 @@ ZMK_TAP_DANCE(num_dance,
 
         mouse_layer {
             bindings = <
-                &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans   U_WH_L U_WH_D U_WH_U U_WH_R &trans &trans
                 &trans &trans &trans &trans &trans &kp N7   U_MS_L U_MS_D U_MS_U U_MS_R &trans &trans
                 &trans &trans &trans &trans &trans &trans   &trans &sk LSFT &sk RCTL &sk LALT &sk LGUI &trans 
-                &trans &mkp MB1 &kp ESC      &kp DEL &mkp MB2 &kp TAB
+                &trans &mkp MB1 &kp ESC      &kp K_CANCEL &mkp MB2 &kp TAB
             >;
         };
 
