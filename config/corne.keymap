@@ -82,6 +82,26 @@ ZMK_TAP_DANCE(num_dance,
             bindings = <&kp NB_SEMI>, <&kp NB_COLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        repeat_bracket_d: repeat_bracket_d {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings
+                = <&macro_tap &kp NB_RBKT>
+                , <&macro_tap &kp NB_D>
+                ;
+        };
+        repeat_bracket_a: repeat_bracket_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <0>;
+            wait-ms = <0>;
+            bindings
+                = <&macro_tap &kp NB_LBKT>
+                , <&macro_tap &kp NB_A>
+                ;
+        };
     };
      combos {
         compatible = "zmk,combos";
@@ -159,7 +179,7 @@ ZMK_TAP_DANCE(num_dance,
         symbol_layer {
             bindings = <
                 &trans &kp NB_AT_SIGN &kp NB_PRCNT &kp NB_ASTERISK &kp NB_HASH &kp N5   &kp NB_CARET &kp NB_LPAR &kp NB_RPAR &tilde &grave &trans
-                &trans &kp NB_DOLLAR &kp NB_PLUS &kp NB_EXCLAMATION  &kp NB_EQUAL &kp NB_PIPE   &kp NB_AMPERSAND &kp NB_LBKT &kp NB_RBKT &kp NB_SQT &kp NB_DQT &trans
+                &trans &kp NB_DOLLAR &kp NB_PLUS &kp NB_EXCLAMATION  &kp NB_EQUAL &kp NB_PIPE   &kp NB_AMPERSAND &kp NB_LBKT &repeat_bracket_d &kp NB_SQT &kp NB_DQT &trans
                 &trans &kp NB_MINUS &kp NB_UNDER &sk LCTL &kp NB_AT_SIGN &trans   &trans &kp NB_LBRC &kp NB_RBRC &caret &kp NB_BSLH &trans
                 &sl BL_LAYER &caps_word &kp SPACE &kp RET &trans &kp RALT
             >;
