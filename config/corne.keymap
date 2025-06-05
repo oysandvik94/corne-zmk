@@ -149,7 +149,7 @@ ZMK_TAP_DANCE(num_dance,
 
         default_layer {
             bindings = <
-                &trans &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L  &kp U &kp Y &nsemi &trans
+                &bootloader &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L  &kp U &kp Y &nsemi &bootloader
                 &trans &kp A &kp R &kp S &kp T &kp G        &kp M &kp N &kp E &kp I &kp O &trans
                 &trans &kp Z &kp X &kp C &kp D &kp V      &kp K &kp H &ncomma &ndot &nfslasn &trans
                 &sl NUM_LAYER &kp SPACE &kp ESC     &kp BSPC &smart_shft &sl SYM_LAYER
