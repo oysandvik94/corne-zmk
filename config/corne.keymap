@@ -85,11 +85,11 @@ ZMK_TAP_DANCE(num_dance,
     };
      combos {
         compatible = "zmk,combos";
-        combo_tmux {
-            timeout-ms = <200>;
-            key-positions = <37 40>;
-            bindings = <&tmux>;
-        };
+        // combo_tmux {
+        //     timeout-ms = <200>;
+        //     key-positions = <37 40>;
+        //     bindings = <&tmux>;
+        // };
         combo_mouse {
             timeout-ms = <100>;
             key-positions = <38 39>;
