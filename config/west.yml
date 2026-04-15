@@ -1,6 +1,7 @@
 manifest:
   defaults:
     remote: urob
+    revision: v0.3 # Pin everything to v0.3
 
   remotes:
     - name: upstream
@@ -11,27 +12,42 @@ manifest:
       url-base: https://github.com/M165437 #new entry
 
   projects:
-    - name: zmk-helpers
-      revision: main
-      path: modules/helpers
+    - name: zmk
+      remote: zmkfirmware
+      import: app/west.yml
+
+    # ZMK modules
+    - name: zmk-adaptive-key
+      path: modules/zmk/adaptive-key
     - name: zmk-auto-layer
-      revision: main
-      path: modules/auto-layer
+      path: modules/zmk/auto-layer
+    - name: zmk-helpers
+      path: modules/zmk/helpers
+    - name: zmk-leader-key
+      path: modules/zmk/leader-key
     - name: zmk-tri-state
-      revision: main
-      path: modules/tri-state
+      path: modules/zmk/tri-state
+    - name: zmk-unicode
+      path: modules/zmk/unicode
+
     - name: nice-view-gem #new entry
       remote: m165437 #new entry
       revision: main #new entry
 
-    # ZMK with Zephyr namespaced under /zmk. This requires that ZMK imports
-    # Zephyr with a path other than `zephyr` (as in `going-modular`).
-    - name: zmk
-      revision: going-modular
-      path: .
+    # Only source necessary Zephyr modules. Remove this entire section to restore
+    # the default (needed for less common hardware).
+    - name: zephyr
+      remote: zmkfirmware
+      revision: v3.5.0+zmk-fixes
+      clone-depth: 1
       import:
-        file: app/west.yml
-        path-prefix: zmk
+        name-allowlist:
+          - cmsis
+          - hal_nordic
+          - hal_rpi_pico
+          - hal_stm32
+          - lvgl
+          - tinycrypt
 
 
   self:
