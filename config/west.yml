@@ -32,7 +32,7 @@ manifest:
 
     - name: nice-view-gem #new entry
       remote: m165437 #new entry
-      revision: main #new entry
+      revision: v0.3.0 #new entry
 
     # Only source necessary Zephyr modules. Remove this entire section to restore
     # the default (needed for less common hardware).
